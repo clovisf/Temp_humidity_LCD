@@ -1,6 +1,6 @@
  /*
  Modified by Clovis Fritzen in June 11th, 2014:
- - The original program read the serial temperature/humidity sensor IDHT11 (which is still part of this program); 
+ - The original program read the serial temperature/humidity sensor DHT11 (which is still part of this program); 
  - "Delay" function substituted by a counter (when the counter overflows the program enters the serial routine)
  - Added the LM35 (10mV/C temperature sensor) reading via serial, to compare both sensors
  */
@@ -39,7 +39,7 @@ void setup()
 {
   pinMode(led, OUTPUT);   
   Serial.begin(9600);
-  Serial.println("idDHT11 temp/humidity sensor - Example program");
+  Serial.println("DHT11 temp/humidity sensor - Example program");
   Serial.print("Lib version: ");
   Serial.println(IDDHT11LIB_VERSION);
   Serial.println("modified by Clovis Fritzen");
@@ -48,7 +48,7 @@ void setup()
    // set up the LCD's number of columns and rows: 
   lcd.begin(16, 2);
   // Print a message to the LCD.
-  lcd.print("IDTH:|LM35:|HUM:");
+  lcd.print(" DHT:|LM35:|HUM:");
 }
 // This wrapper is in charge of calling 
 // mus be defined like this for the lib work
@@ -122,7 +122,7 @@ else
   Serial.print("Humidity (%): ");
   Serial.println(DHT11.getHumidity(), 0); // ", 0" represents the number of decimal positions after the comma
 
-  Serial.print("DTH11 Temp (oC): ");
+  Serial.print("DHT11 Temp (oC): ");
   Serial.println(DHT11.getCelsius(), 0); // ", 0" represents the number of decimal positions after the comma
   
   lcd.setCursor(13, 1);
